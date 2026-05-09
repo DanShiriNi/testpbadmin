@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка | Пиксельное сражение</title>
+    <link rel="stylesheet" href="styles/replace-canvas.css">
+</head>
+<body>
+    <div class="admin_page_container">
+        <div id="canvas-container" class="canvas_container">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
+        <div class="tool_container">
+            <div class="color_palette_container">
+                <button class="palette_button" id="palette-button" type="button"></button>
+                <div class="color_palette_dropdown">
+                    <ul class="color_palette" id="color-pallete"></ul>
+                </div>
+            </div>
+            <div class="reset_container">
+                <button class="reset_button" id="back-button">Back</button>
+                <button class="reset_button" id="forward-button">Forward</button>
+            </div>
+            <div class="save_container">
+                <button class="save_button" id="save-button" type="button">Сохранить</button>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="/scripts/init-consts.js"></script>
+    <script src="/scripts/color-pallete.js"></script>
+    <script src="/scripts/init-canvas.js" type="module"></script>
+    <script src="/scripts/move-canvas.js" type="module"></script>
+    <script src="/scripts/touch-canvas.js" type="module"></script>
+    <script src="/scripts/paint-pixel.js" type="module"></script>
+    <script src="/scripts/save-canvas.js" type="module"></script>
+</body>
+</html>
