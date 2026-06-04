@@ -14,7 +14,7 @@ function getCurrentPixelColor(x, y) {
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
 
-function redraw() {
+export function redraw() {
     ctx.clearRect(0, 0, imgWidth, imgHeight);
     if (baseImage) ctx.drawImage(baseImage, 0, 0);
     for (const p of currentPixels) {
