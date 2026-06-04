@@ -32,6 +32,7 @@ export function updateButtons() {
 function initEditor() {
     img = new Image();
     img.src = "https://pb.diddont.ru/history/canvas.png";
+    img.crossOrigin = "Anonymous";   // важно!
     // img.src = "/testpbadmin/canvas.png";
     img.onload = () => {
         baseImage = img;
