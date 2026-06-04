@@ -1,5 +1,5 @@
 // Сенсорное управление полотна
-import {applyTransform, startCanvasDrag, canvasDrag, endCanvasDrag} from '/scripts/move-canvas.js';
+import {applyTransform, startCanvasDrag, canvasDrag, endCanvasDrag} from './move-canvas.js';
 
 function createFakeMouseEvent(type, touch) {
     return {
