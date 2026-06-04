@@ -10,6 +10,8 @@ const forwardBtn = document.getElementById("forward-button");
 const saveBtn = document.getElementById("save-button");
 const toolContainer = document.querySelector(".tool_container");
 
+let img = null;
+
 let selectedColor = "#ffffff";
 let scale = 8;
 let translateX = 0;
