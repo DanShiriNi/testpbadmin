@@ -1,5 +1,5 @@
 // Перекраска полотна
-import {saveState} from '/scripts/save-canvas.js';
+import {saveState} from './save-canvas.js';
 
 function getCurrentPixelColor(x, y) {
     const existing = currentPixels.find(p => p.x === x && p.y === y);
