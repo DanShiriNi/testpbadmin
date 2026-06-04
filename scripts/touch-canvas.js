@@ -1,6 +1,6 @@
 // Сенсорное управление полотна
 import {applyTransform, startCanvasDrag, canvasDrag, endCanvasDrag} from './move-canvas.js';
-import {setAnimation, setCenterPixel} from './move-canvas.js'; // Добавлены недостающие импорты
+import {setCenterPixel} from './move-canvas.js'; // Добавлены недостающие импорты
 
 function createFakeMouseEvent(type, touch) {
     return {
@@ -64,9 +64,7 @@ function touchMove(e) {
 
             translateX = centerX - (centerX - translateX) * (scale / oldScale);
             translateY = centerY - (centerY - translateY) * (scale / oldScale);
-
-            // Добавлена логика обновления, которая была в рабочем файле
-            if (isAnimating) setAnimation();
+            
             applyTransform();
             setCenterPixel();
         }
