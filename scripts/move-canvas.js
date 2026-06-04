@@ -1,5 +1,5 @@
 // Управление полотна
-import {paintPixel} from '/scripts/paint-pixel.js';
+import {paintPixel} from './paint-pixel.js';
 
 function snapToPixel() {
     const screenCenterX = window.innerWidth / 2;
