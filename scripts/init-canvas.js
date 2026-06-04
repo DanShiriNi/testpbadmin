@@ -30,7 +30,7 @@ export function updateButtons() {
 }
 
 function initEditor() {
-    const img = new Image();
+    img = new Image();
     img.src = "https://pb.diddont.ru/history/canvas.png";
     // img.src = "/testpbadmin/canvas.png";
     img.onload = () => {
