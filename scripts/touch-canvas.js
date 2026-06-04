@@ -1,5 +1,6 @@
 // Сенсорное управление полотна
 import {applyTransform, startCanvasDrag, canvasDrag, endCanvasDrag} from './move-canvas.js';
+import {setAnimation, setCenterPixel} from './move-canvas.js'; // Добавлены недостающие импорты
 
 function createFakeMouseEvent(type, touch) {
     return {
@@ -20,7 +21,6 @@ function startTouch(e) {
         startX = touch.clientX;
         startY = touch.clientY;
         touchMoved = false;
-        
         const fakeEvent = createFakeMouseEvent('mousedown', touch);
         startCanvasDrag(fakeEvent);
     } 
@@ -40,7 +40,6 @@ function touchMove(e) {
     const touches = e.touches;
     if (touches.length === 1) {
         const touch = touches[0];
-        
         if (Math.abs(touch.clientX - startX) > TAP_THRESHOLD ||
             Math.abs(touch.clientY - startY) > TAP_THRESHOLD) {
             touchMoved = true;
@@ -66,7 +65,10 @@ function touchMove(e) {
             translateX = centerX - (centerX - translateX) * (scale / oldScale);
             translateY = centerY - (centerY - translateY) * (scale / oldScale);
 
+            // Добавлена логика обновления, которая была в рабочем файле
+            if (isAnimating) setAnimation();
             applyTransform();
+            setCenterPixel();
         }
     }
 }
@@ -77,7 +79,6 @@ function touchEnd(e) {
     if (touches.length === 0) {
         const lastTouch = e.changedTouches[0];
         const fakeEvent = createFakeMouseEvent('mouseup', lastTouch);
-        
         endCanvasDrag(fakeEvent);
         
         isPinching = false;
@@ -97,7 +98,8 @@ function touchCancel(e) {
     touchMoved = false;
 }
 
-function initTouchControls() {
+// Добавлено ключевое слово export, чтобы функцию можно было вызвать извне
+export function initTouchControls() {
     canvasContainer.addEventListener('touchstart', startTouch, { passive: false });
     canvasContainer.addEventListener('touchmove', touchMove, { passive: false });
     canvasContainer.addEventListener('touchend', touchEnd, { passive: false });
