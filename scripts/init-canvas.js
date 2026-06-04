@@ -1,6 +1,6 @@
 // Инициализация полотна
-import {applyTransform} from '/scripts/move-canvas.js';
-import {redraw} from '/scripts/paint-pixel.js';
+import {applyTransform} from './move-canvas.js';
+import {redraw} from './paint-pixel.js';
 
 canvas.width = imgWidth;
 canvas.height = imgHeight;
