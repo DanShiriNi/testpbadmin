@@ -1,6 +1,6 @@
 // Сохранение полотна
-import {redraw} from '/scripts/paint-pixel.js';
-import {updateButtons} from '/scripts/init-canvas.js';
+import {redraw} from './paint-pixel.js';
+import {updateButtons} from './init-canvas.js';
 
 export function saveState() {
     if (historyIndex < history.length - 1) history = history.slice(0, historyIndex + 1);
